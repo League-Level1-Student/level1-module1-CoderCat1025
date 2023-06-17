@@ -18,6 +18,7 @@ public class Rocket implements GameControlScene {
 	boolean deccelerate = false;
 	boolean fire = false;
 	boolean restart = false;
+	
 
 	/*
 	 * 2. A constructor does not have a return type and must be named the same as
@@ -34,6 +35,13 @@ public class Rocket implements GameControlScene {
 	 * With this you can run the game. use WASD to move and SPACE to fire
 	 */
 
+	public Rocket () {
+		x = AsteroidsGame.WIDTH / 2;
+		y = AsteroidsGame.HEIGHT / 2;
+		size = 10;
+		collisionBox = new Rectangle(x - size / 2, y - size / 2, size, size);
+	}
+	
 	/*
 	 * 3. If we want to be able to choose where to place the rocket we can create a
 	 * constructor that has parameters for x and y we can do this like any other
@@ -50,6 +58,13 @@ public class Rocket implements GameControlScene {
 	 * constructor.
 	 */
 
+	public Rocket (int x, int y) {
+		this.x = x;
+				this.y = y;
+				size = 10;
+				collisionBox = new Rectangle(x - size / 2, y - size / 2, size, size);
+	}
+	
 	@Override
 	public void draw(Graphics g) {
 		Graphics2D graphics2D = (Graphics2D) g;

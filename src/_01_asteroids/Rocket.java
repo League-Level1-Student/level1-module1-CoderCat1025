@@ -65,7 +65,6 @@ public class Rocket implements GameControlScene {
 				collisionBox = new Rectangle(x - size / 2, y - size / 2, size, size);
 	}
 	
-	@Override
 	public void draw(Graphics g) {
 		Graphics2D graphics2D = (Graphics2D) g;
 		graphics2D.rotate(Math.toRadians(angle), x, y);

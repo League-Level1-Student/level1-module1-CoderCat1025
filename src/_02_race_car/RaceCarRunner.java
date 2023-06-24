@@ -19,8 +19,8 @@ if (car.isDamaged() == true) {
 	car.pit();
 }
 		// 5. Help the car move into first place.
-while (car.getPositionInRace() < 1) {
+while (car.getPositionInRace() > 1) {
 	car.overtake();
 }
 	}
-}
+} 

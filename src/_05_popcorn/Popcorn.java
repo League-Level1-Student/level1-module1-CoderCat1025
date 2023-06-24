@@ -62,6 +62,11 @@ public class Popcorn {
 		}
 	}
 	
+	public int getKernels() {
+		return kernels;
+	}
+
+	
 	public void applyHeat() {
 		pause();
 

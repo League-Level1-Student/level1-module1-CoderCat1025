@@ -16,28 +16,30 @@ JPanel panel = new JPanel();
 JTextField answer = new JTextField(20);
 JLabel label = new JLabel();
 JButton button = new JButton();
+String answer2 = "";
+String answer3 = "";
 
 
 
 
 public void run() {
-	binaryConverter converter = new binaryConverter();
-	converter.frame.setVisible(true);
-	converter.frame.setTitle("Convert 8 bits of binary to ASCII");
-	converter.panel.setVisible(true);
+
+	frame.setVisible(true);
+	frame.setTitle("Convert 8 bits of binary to ASCII");
+	panel.setVisible(true);
 	
-	converter.frame.add(converter.panel);
-	converter.panel.add(converter.answer);
-	converter.panel.add(converter.button);
-	converter.panel.add(converter.label);
+	frame.add(panel);
+	panel.add(answer);
+	panel.add(button);
+	panel.add(label);
 	
-	converter.button.setText("convert");
-	converter.button.addActionListener(this);
+	button.setText("convert");
+	button.addActionListener(this);
 	
-	converter.frame.pack();
-	converter.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.pack();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	
-	converter.label.setText("convert");
+	label.setText(answer3);
 }
 
 
@@ -66,8 +68,11 @@ String convert(String input) {
 
 @Override
 public void actionPerformed(ActionEvent e) {
-	String answer2 = answer.getText();
-	this.convert(answer2);
+	answer2 = answer.getText();
+	answer3 = this.convert(answer2);
+	
+	label.setText(answer3);
+	frame.pack();
 }
 
 }
